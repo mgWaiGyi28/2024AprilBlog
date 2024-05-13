@@ -34,7 +34,7 @@
                     </div>
                     
                     <div class="card-footer text-end">
-                        <a href="article-view.php?id=<?= $article['id']?>">See more</a>
+                        <a href="article_view.php?id=<?= $article['id']?>">See more</a>
                     </div>
                 </div>
             </div>
