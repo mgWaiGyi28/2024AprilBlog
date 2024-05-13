@@ -1,6 +1,5 @@
 <?php include('component/header.php') ?>
-`
-        <div class="row">
+        <div class="row">                                                                       
             <div class="col-3">
                 <div class="card mb-3">
                     <img src="photo/img-1.jpg" alt="" class="img-fluid">

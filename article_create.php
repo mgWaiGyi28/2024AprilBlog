@@ -2,10 +2,15 @@
     include('db.php');
 
     if(isset($_POST['add-article'])) {
+        $id = $_POST['id'];
         $title = htmlspecialchars(trim($_POST['title']));
         $about = htmlspecialchars(trim($_POST['about']));
         $image = $_FILES['image'];
-        $error = [];
+        echo "<pre>";
+            print_r($image);
+        echo "</pre>";
+        $error = []; 
+        
 
         empty($title) ? ($error[] = 'Please Enter Your Title') : '' ;
         empty($about) ? ($error[] = 'Please Enter About') : '';
@@ -15,10 +20,10 @@
             $image_path = "photo/".$image['name'];
             move_uploaded_file($image['tmp_name'], $image_path);
             $query = "INSERT INTO articles (title, about, image, posted_at) 
-            VALUES ('$title', '$about', '$image_path', now())";
+                         VALUES ('$title', '$about', '$image_path', now())";
             $result = mysqli_query($conn, $query);
             if($result) {
-                header('location/ index.php');
+                header('location: index.php');
             } else {
                 echo mysqli_connect_error();
             }
