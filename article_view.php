@@ -15,14 +15,24 @@
 
 
 <?php include('component/header.php') ?>
+
+    <?php if(isset($article)): ?>
        <h2 class="mb-2"><?= $article['title'] ?> </h2>
        <p class="mb-2"><?= $article['about'] ?></p>
-       <img src="<?= $article['image'] ?>" alt="Insert Your Image Here" class="mb-2" height="300rem">
-       <p>posted at <i><?= $article['posted_at'] ?></i></p>
+       <img src="<?= $article['image'] ?>" 
+       alt="Insert Your Image Here" class="mb-2"
+        height="300rem">
+       <p>posted at <i><?= date_format(date_create($article['posted_at']), 'd-M-Y') 
+       ?></i></p>
 
+        <a href="article_edit.php?id=<?= $article
+        ['id'] ?>" class="">Edit</a>
 
+        <?php?>
 
-
+    <?php else: ?>
+        <p class="fs-2 text-center">No Match Article.</p>
+    <?php endif; ?>
 
 
         <!-- <div class="row">                                                                       

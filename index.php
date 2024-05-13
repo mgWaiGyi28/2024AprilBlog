@@ -16,7 +16,7 @@
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
         <?php while($article = mysqli_fetch_assoc($articles)): ?>
-            <div class="col">
+            <div class="col mb-3">
                 <div class="card">
                     <img src="<?= $article['image'] ?>" alt="Article Picture Here......" class="object-fit-cover" height="250rem">
                     <div class="card-body">

@@ -41,49 +41,54 @@
     <form action="" method="post" enctype="multipart/form-data">
 
     <!-- error -->
-     <div>
-        <ul class="text-danger">
-            <?php
+        <div>
+            <ul class="text-danger">
+                <?php
 
-            // if($error) {
-                // foreach($error as $e){
-                    // echo "<li>".$e."</li>";
+                // if($error) {
+                    // foreach($error as $e){
+                        // echo "<li>".$e."</li>";
 
-             //   }
-           // }
+                //   }
+            // }
 
-            ?>
-            <?php if(isset($error)): ?>
-                <?php if($error) : ?>
-                    <?php foreach($error as $e) : ?>
-                        <li><?php echo $e; ?></li>
-                    <?php endforeach; ?>
+                ?>
+                <?php if(isset($error)): ?>
+                    <?php if($error) : ?>
+                        <?php foreach($error as $e) : ?>
+                            <li><?php echo $e; ?></li>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 <?php endif; ?>
-            <?php endif; ?>
-        </ul>
-     </div>
-
-    <div class="mb-3">
-        <label for="title" class="">Title:</label>
-        <input type="text" name="title" id="title" class="form-control" placeholder="Your Article Title Here...">
-    </div>
-
-    <div class="mb-3">
-        <label for="about" class="">About:</label>
-        <textarea name="about"  cols="30" rows="5" class="form-control"></textarea>
-    </div>
-
-    <div class="mb-3">
-        <label for="image" class="">Image:</label>
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1">Browse...</span>
-            <input type="file" name="image" class="form-control" placeholder="No file selected" aria-label="Username" aria-describedby="basic-addon1">
+            </ul>
         </div>
-    </div>
-    
-    <button class="btn btn-outline-primary" type="submit" name="add-article">Create</button>
-</div>
+
+        <div class="mb-3">
+            <label for="title" class="">Title:</label>
+            <input type="text" name="title" id="title" class="form-control" placeholder="Your Article Title Here...">
+        </div>
+
+        <div class="mb-3">
+            <label for="about" class="">About:</label>
+            <textarea name="about"  cols="30" rows="5" class="form-control"></textarea>
+        </div>
+
+        <div class="my-3">
+            <label for="image">Image:</label>
+            <input type="file" id="image" name="image" class="form-control">
+        </div>
+
+        <!-- <div class="mb-3">
+            <label for="image" class="">Image:</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Browse...</span>
+                <input type="file" name="image" class="form-control" placeholder="No file selected" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+        </div> -->
+        
+        <button class="btn btn-outline-primary" type="submit" name="add-article">Create</button>
     </form>
+</div>
 
 
 <?php include('component/footer.php') ?>
